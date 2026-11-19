@@ -1,4 +1,5 @@
 FROM nginx:stable-alpine
+RUN apk upgrade --no-cache
 COPY dist /usr/share/nginx/html
 COPY nginx.conf.template /etc/nginx/templates/nginx.conf.template
 ENV BACKEND_URL=http://backend:8080
